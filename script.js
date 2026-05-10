@@ -12,7 +12,7 @@ function closeMenu() {
     }
 }
 
-// Add a simple sticky header shrink effect on scroll
+// Simple sticky header shrink effect on scroll
 window.addEventListener('scroll', function() {
     const header = document.getElementById('main-header');
     if (window.scrollY > 50) {
