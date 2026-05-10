@@ -1,10 +1,38 @@
-// Toggle mobile menu
+// --- DARK MODE LOGIC ---
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const body = document.body;
+const icon = darkModeToggle.querySelector('i');
+
+// Check LocalStorage to see if the user previously enabled dark mode
+if (localStorage.getItem('darkMode') === 'enabled') {
+    body.classList.add('dark-mode');
+    icon.classList.remove('fa-moon');
+    icon.classList.add('fa-sun');
+}
+
+// Toggle Dark Mode when the button is clicked
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    
+    if (body.classList.contains('dark-mode')) {
+        // Turn Dark Mode ON
+        localStorage.setItem('darkMode', 'enabled');
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+    } else {
+        // Turn Dark Mode OFF
+        localStorage.setItem('darkMode', 'disabled');
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
+    }
+});
+
+// --- MOBILE MENU LOGIC ---
 function toggleMenu() {
     const navLinks = document.getElementById('nav-links');
     navLinks.classList.toggle('active');
 }
 
-// Close mobile menu on link click
 function closeMenu() {
     const navLinks = document.getElementById('nav-links');
     if (navLinks.classList.contains('active')) {
@@ -12,7 +40,7 @@ function closeMenu() {
     }
 }
 
-// Simple sticky header shrink effect on scroll
+// --- STICKY HEADER SHRINK EFFECT ---
 window.addEventListener('scroll', function() {
     const header = document.getElementById('main-header');
     if (window.scrollY > 50) {
@@ -22,18 +50,14 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// FAQ Accordion Logic
+// --- FAQ ACCORDION LOGIC ---
 const faqQuestions = document.querySelectorAll('.faq-question');
 
 faqQuestions.forEach(question => {
     question.addEventListener('click', () => {
-        // Toggle the active class on the button
         question.classList.toggle('active');
-        
-        // Find the corresponding answer panel
         const answer = question.nextElementSibling;
         
-        // Toggle max-height to reveal/hide content smoothly
         if (question.classList.contains('active')) {
             answer.style.maxHeight = answer.scrollHeight + "px";
         } else {
@@ -42,12 +66,10 @@ faqQuestions.forEach(question => {
     });
 });
 
-// Submit Form Data to WhatsApp
+// --- WHATSAPP FORM SUBMISSION ---
 function submitFormToWhatsApp(event) {
-    // Prevent the form from reloading the page
     event.preventDefault();
 
-    // Gather all the data from the form
     const name = document.getElementById('q-name').value;
     const dest = document.getElementById('q-dest').value;
     const dates = document.getElementById('q-dates').value;
@@ -55,7 +77,6 @@ function submitFormToWhatsApp(event) {
     const adults = document.getElementById('q-adults').value;
     const kids = document.getElementById('q-kids').value;
 
-    // Create the message text
     const message = `Hello Shrihari Travel Solution!%0A%0A` + 
                     `I would like to request a custom travel quote. Here are my details:%0A%0A` +
                     `*Name:* ${name}%0A` +
@@ -66,13 +87,8 @@ function submitFormToWhatsApp(event) {
                     `*Number of Children:* ${kids}%0A%0A` +
                     `Please let me know the next steps to start planning. Thank you!`;
 
-    // The WhatsApp number (Sujal's number)
     const phoneNumber = "919371104629";
-
-    // Create the final WhatsApp API URL
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
-    // Open WhatsApp in a new tab
     window.open(whatsappUrl, '_blank');
-                }
-        
+        }
