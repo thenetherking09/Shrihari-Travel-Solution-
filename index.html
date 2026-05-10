@@ -3,106 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shrihari Travel Solution</title>
-    
+    <title>Shrihari Travel Solution | Book Tours & Packages</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="Shrihari Travel Solution Logo">
-            <h1>Shrihari Travel Solution</h1>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="contact-info-top">
+                <span><i class="fas fa-phone-alt"></i> +91 9371104629</span>
+                <span><i class="fas fa-map-marker-alt"></i> Nashik, Maharashtra</span>
+            </div>
+            <div class="social-links-top">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-        <button class="mobile-menu-btn" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </button>
-        <nav>
-            <ul id="nav-links">
-                <li><a href="#hero" onclick="closeMenu()">Home</a></li>
-                <li><a href="#services" onclick="closeMenu()">Services</a></li>
-                <li><a href="#about" onclick="closeMenu()">About Us</a></li>
-                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-            </ul>
-        </nav>
+    </div>
+
+    <header id="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Shrihari Travel Solution Logo">
+                <div class="logo-text">
+                    <h1>Shrihari Travel</h1>
+                    <span>Solution</span>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="#" onclick="closeMenu()">India Tours</a></li>
+                    <li><a href="#" onclick="closeMenu()">World Tours</a></li>
+                    <li><a href="#specialty" onclick="closeMenu()">Specialty Tours</a></li>
+                    <li><a href="#about" onclick="closeMenu()">About Us</a></li>
+                    <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section id="hero">
-        <h2>Discover the World with Us</h2>
-        <p>Your trusted partner for memorable journeys, spiritual tours, and seamless premium travel experiences.</p>
-        <a href="#contact" class="btn">Start Your Journey</a>
-    </section>
-
-    <section id="services">
-        <h3>Our Travel Services</h3>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-om service-icon"></i>
-                <h4>Spiritual & Pilgrimage</h4>
-                <p>Specially curated, hassle-free trips to holy destinations. Experience peace of mind while we handle the logistics.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-users service-icon"></i>
-                <h4>Family Holidays</h4>
-                <p>Create unforgettable memories with your loved ones with our all-inclusive family vacation packages.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-map-marked-alt service-icon"></i>
-                <h4>Custom Itineraries</h4>
-                <p>Tell us your dream destination, and we will build a personalized travel plan tailored to your exact needs.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <h3>About Us</h3>
-        <div class="about-content">
-            <p>At <strong>Shrihari Travel Solution</strong>, we believe that travel is more than just visiting a place; it's about creating lifelong memories. We take pride in offering premium, culturally rich, and incredibly comfortable travel experiences for all our clients.</p>
-            
-            <div class="team-highlight">
-                <p>Guided by the experienced leadership of our Owner, <strong>Sujal Lad</strong>, and driven by the strategic vision of our Marketing Director, <strong>Gayatri Ahire</strong>, our dedicated team works tirelessly to ensure every detail of your trip is perfectly planned.</p>
+    <section id="hero-search-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2>Chalo, Duniya Dekhein!</h2>
+                <p>Discover India and the World with Shrihari Travel Solution</p>
+                
+                <div class="search-box-container">
+                    <form class="tour-search-form" onsubmit="event.preventDefault();">
+                        <div class="input-group">
+                            <label>Where to?</label>
+                            <input type="text" placeholder="Enter destination (e.g., Kerala, Dubai)">
+                        </div>
+                        <div class="input-group">
+                            <label>Month of Travel</label>
+                            <select>
+                                <option>Any Month</option>
+                                <option>June 2026</option>
+                                <option>July 2026</option>
+                                <option>August 2026</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="search-btn"><i class="fas fa-search"></i> Search Tours</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
-        <h3>Get in Touch</h3>
-        <p>Ready to plan your next adventure? Contact us today!</p>
-        <div class="contact-info">
-            <div class="contact-card">
-                <i class="fas fa-user-tie"></i>
-                <p>Owner & Travel Expert</p>
-                <span>Sujal Lad</span>
-                <br>
-                <p>Call or WhatsApp:</p>
-                <span>+91 9371104629</span>
+    <section id="specialty" class="tour-themes">
+        <h3>Find Your Perfect Holiday</h3>
+        <div class="theme-grid">
+            <div class="theme-item">
+                <div class="theme-icon"><i class="fas fa-om"></i></div>
+                <p>Spiritual & Pilgrimage</p>
             </div>
-            <div class="contact-card">
-                <i class="fas fa-bullhorn"></i>
-                <p>Marketing Director</p>
-                <span>Gayatri Ahire</span>
-                <br>
-                <p>Office Location:</p>
-                <span>Nashik, Maharashtra</span>
+            <div class="theme-item">
+                <div class="theme-icon"><i class="fas fa-users"></i></div>
+                <p>Family Holidays</p>
+            </div>
+            <div class="theme-item">
+                <div class="theme-icon"><i class="fas fa-heart"></i></div>
+                <p>Honeymoon Special</p>
+            </div>
+            <div class="theme-item">
+                <div class="theme-icon"><i class="fas fa-suitcase-rolling"></i></div>
+                <p>Customized Trips</p>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Shrihari Travel Solution. All Rights Reserved.</p>
+    <section class="trending-tours">
+        <h3>Trending Destinations</h3>
+        <div class="tour-cards-container">
+            <div class="tour-card">
+                <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                    <span class="badge">Best Seller</span>
+                </div>
+                <div class="tour-details">
+                    <div class="tour-duration"><i class="far fa-clock"></i> 5 Days / 4 Nights</div>
+                    <h4>Mesmerizing Goa</h4>
+                    <ul class="tour-highlights">
+                        <li><i class="fas fa-check"></i> 4 Star Accommodation</li>
+                        <li><i class="fas fa-check"></i> Sightseeing Included</li>
+                        <li><i class="fas fa-check"></i> All Meals</li>
+                    </ul>
+                    <div class="tour-price-row">
+                        <div class="price">
+                            <span class="starts-at">Starts from</span>
+                            <span class="amount">₹15,999</span>
+                        </div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-card">
+                <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="tour-details">
+                    <div class="tour-duration"><i class="far fa-clock"></i> 6 Days / 5 Nights</div>
+                    <h4>Kerala Backwaters</h4>
+                    <ul class="tour-highlights">
+                        <li><i class="fas fa-check"></i> Houseboat Stay</li>
+                        <li><i class="fas fa-check"></i> Munnar Tea Gardens</li>
+                        <li><i class="fas fa-check"></i> Transfers Included</li>
+                    </ul>
+                    <div class="tour-price-row">
+                        <div class="price">
+                            <span class="starts-at">Starts from</span>
+                            <span class="amount">₹22,500</span>
+                        </div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tour-card">
+                <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
+                    <span class="badge">Pilgrimage</span>
+                </div>
+                <div class="tour-details">
+                    <div class="tour-duration"><i class="far fa-clock"></i> 4 Days / 3 Nights</div>
+                    <h4>Divine Varanasi & Ayodhya</h4>
+                    <ul class="tour-highlights">
+                        <li><i class="fas fa-check"></i> VIP Darshan</li>
+                        <li><i class="fas fa-check"></i> Ganga Aarti</li>
+                        <li><i class="fas fa-check"></i> AC Transport</li>
+                    </ul>
+                    <div class="tour-price-row">
+                        <div class="price">
+                            <span class="starts-at">Starts from</span>
+                            <span class="amount">₹12,000</span>
+                        </div>
+                        <button class="book-btn">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="why-choose-us">
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>Why Travel With Shrihari?</h3>
+                <p>Guided by our Owner, <strong>Sujal Lad</strong>, and our Marketing Director, <strong>Gayatri Ahire</strong>, we ensure every journey is seamless, comfortable, and memorable. We handle the logistics so you can focus on making memories.</p>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h4>500+</h4>
+                        <p>Happy Families</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>50+</h4>
+                        <p>Destinations</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4>100%</h4>
+                        <p>Customizable</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div class="footer-col">
+                <img src="logo.png" alt="Logo" class="footer-logo">
+                <p>Your trusted partner for memorable journeys, spiritual tours, and seamless premium travel experiences.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cancellation Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-user-tie"></i> Sujal Lad (Owner)</p>
+                <p><i class="fas fa-bullhorn"></i> Gayatri Ahire (Marketing)</p>
+                <p><i class="fas fa-phone-alt"></i> +91 9371104629</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nashik, Maharashtra</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Shrihari Travel Solution. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <a href="https://wa.me/919371104629?text=Hello%20Shrihari%20Travel%20Solution,%20I%20would%20like%20to%20plan%20a%20trip!" 
-       class="whatsapp-float" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       title="Chat with us on WhatsApp">
+    <a href="https://wa.me/919371104629?text=Hello%20Shrihari%20Travel%20Solution,%20I%20am%20looking%20for%20a%20tour%20package!" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="script.js"></script>
-
 </body>
-</html>
+    </html>
+    
