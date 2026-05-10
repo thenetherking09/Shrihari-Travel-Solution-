@@ -2,49 +2,68 @@
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = themeToggle.querySelector('i');
 
-// Check local storage for saved theme, or use system preference as fallback
 const currentTheme = localStorage.getItem('theme');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
 
-// Function to apply theme
 function setTheme(isDark) {
     if (isDark) {
         document.body.setAttribute('data-theme', 'dark');
         themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun'); // Show sun icon in dark mode
+        themeIcon.classList.add('fa-sun'); 
         localStorage.setItem('theme', 'dark');
     } else {
         document.body.removeAttribute('data-theme');
         themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon'); // Show moon icon in light mode
+        themeIcon.classList.add('fa-moon'); 
         localStorage.setItem('theme', 'light');
     }
 }
 
-// Initialize theme on load
 if (currentTheme === 'dark') {
     setTheme(true);
 } else if (currentTheme === 'light') {
     setTheme(false);
 } else if (prefersDarkScheme.matches) {
-    // If no saved preference, follow system preference
     setTheme(true);
 }
 
-// Toggle theme on button click
 themeToggle.addEventListener('click', () => {
     const isCurrentlyDark = document.body.getAttribute('data-theme') === 'dark';
     setTheme(!isCurrentlyDark);
 });
 
-// Automatically listen for system theme changes (e.g. phone goes into dark mode at sunset)
 prefersDarkScheme.addEventListener('change', (e) => {
-    // Only auto-switch if the user hasn't manually forced a preference
     if (!localStorage.getItem('theme')) {
         setTheme(e.matches);
     }
 });
 
+// --- SMART VIBE SELECTION LOGIC ---
+function selectVibe(vibeName) {
+    // 1. Scroll down to the quote form smoothly
+    document.getElementById('quote-section').scrollIntoView({ behavior: 'smooth' });
+    
+    // 2. Find the destination input box
+    const destInput = document.getElementById('q-dest');
+    
+    // 3. Auto-fill it with the vibe they clicked
+    destInput.value = "I want a " + vibeName + " vibe";
+    
+    // 4. Highlight the box briefly so they see it was auto-filled!
+    destInput.style.transition = "background-color 0.5s ease";
+    
+    // Check if we are in dark mode so the highlight color looks right
+    if (document.body.getAttribute('data-theme') === 'dark') {
+        destInput.style.backgroundColor = "#4a3b22"; // Dark gold highlight
+    } else {
+        destInput.style.backgroundColor = "#fff3cd"; // Light yellow highlight
+    }
+    
+    // Reset the highlight color after 1.5 seconds
+    setTimeout(() => {
+        destInput.style.backgroundColor = "var(--input-bg)";
+    }, 1500);
+}
 
 // --- MOBILE MENU LOGIC ---
 function toggleMenu() {
