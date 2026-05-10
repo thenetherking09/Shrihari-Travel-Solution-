@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrihari Travel Solution</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CORE STYLES --- */
+        :root {
+            --primary-purple: #2b0b47; 
+            --light-purple: #4e1a70;
+            --accent-gold: #d4af37; 
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-light: #f9f9fb;
+            --whatsapp-green: #25D366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden; /* Prevents horizontal scrolling issues */
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            background-color: var(--primary-purple);
+            color: var(--accent-gold);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo-container h1 {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            background: linear-gradient(rgba(43, 11, 71, 0.75), rgba(43, 11, 71, 0.75)), url('https://images.unsplash.com/photo-1506461883276-594a12b11ac3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--text-light);
+            padding: 0 20px;
+        }
+
+        #hero h2 {
+            font-size: 3.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            line-height: 1.2;
+        }
+
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+        }
+
+        .btn {
+            background-color: var(--accent-gold);
+            color: var(--primary-purple);
+            padding: 15px 35px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        /* --- GENERAL SECTIONS --- */
+        section {
+            padding: 80px 5%;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary-purple);
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        h3::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-gold);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-bottom: 5px solid var(--accent-gold);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .service-card h4 {
+            color: var(--light-purple);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* --- ABOUT SECTION --- */
+        #about {
+            background-color: #f1e9f6;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .team-highlight {
+            margin-top: 40px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 6px solid var(--accent-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        /* --- CONTACT SECTION --- */
+        #contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .contact-card {
+            background: var(--primary-purple);
+            color: var(--text-light);
+            padding: 30px 40px;
+            border-radius: 12px;
+            min-width: 280px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-card i {
+            font-size: 2rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .contact-card span {
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.3rem;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1a062b;
+            color: #ccc;
+            text-align: center;
+            padding: 25px 5%;
+        }
+
+        /* --- FLOATING WHATSAPP BUTTON --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* --- RESPONSIVE DESIGN (MOBILE & TABLET) --- */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--accent-gold);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 992px) {
+            #hero h2 { font-size: 2.8rem; }
+            section { padding: 60px 5%; }
+        }
+
+        @media (max-width: 768px) {
+            .logo-container h1 {
+                font-size: 1.2rem;
+            }
+
+            .logo-container img {
+                height: 45px;
+                width: 45px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-purple);
+                text-align: center;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            
+            nav ul.active {
+                max-height: 300px; /* Expands the menu smoothly */
+                padding: 20px 0;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            #hero { height: 70vh; }
+            #hero h2 { font-size: 2.2rem; }
+            #hero p { font-size: 1rem; }
+            
+            h3 { font-size: 2rem; }
+            
+            .contact-info { flex-direction: column; align-items: center; }
+            .contact-card { width: 100%; max-width: 400px; }
+
+            /* Adjust WhatsApp button for smaller thumbs */
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Shrihari Travel Solution Logo">
+            <h1>Shrihari Travel Solution</h1>
+        </div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="#hero" onclick="closeMenu()">Home</a></li>
+                <li><a href="#services" onclick="closeMenu()">Services</a></li>
+                <li><a href="#about" onclick="closeMenu()">About Us</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h2>Discover the World with Us</h2>
+        <p>Your trusted partner for memorable journeys, spiritual tours, and seamless premium travel experiences.</p>
+        <a href="#contact" class="btn">Start Your Journey</a>
+    </section>
+
+    <section id="services">
+        <h3>Our Travel Services</h3>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-om service-icon"></i>
+                <h4>Spiritual & Pilgrimage</h4>
+                <p>Specially curated, hassle-free trips to holy destinations. Experience peace of mind while we handle the logistics.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-users service-icon"></i>
+                <h4>Family Holidays</h4>
+                <p>Create unforgettable memories with your loved ones with our all-inclusive family vacation packages.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-map-marked-alt service-icon"></i>
+                <h4>Custom Itineraries</h4>
+                <p>Tell us your dream destination, and we will build a personalized travel plan tailored to your exact needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h3>About Us</h3>
+        <div class="about-content">
+            <p>At <strong>Shrihari Travel Solution</strong>, we believe that travel is more than just visiting a place; it's about creating lifelong memories. We take pride in offering premium, culturally rich, and incredibly comfortable travel experiences for all our clients.</p>
+            
+            <div class="team-highlight">
+                <p>Guided by the experienced leadership of our Owner, <strong>Sujal Lad</strong>, and driven by the strategic vision of our Marketing Director, <strong>Gayatri Ahire</strong>, our dedicated team works tirelessly to ensure every detail of your trip is perfectly planned.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h3>Get in Touch</h3>
+        <p>Ready to plan your next adventure? Contact us today!</p>
+        <div class="contact-info">
+            <div class="contact-card">
+                <i class="fas fa-user-tie"></i>
+                <p>Owner & Travel Expert</p>
+                <span>Sujal Lad</span>
+                <br>
+                <p>Call or WhatsApp:</p>
+                <span>+91 9371104629</span>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-bullhorn"></i>
+                <p>Marketing Director</p>
+                <span>Gayatri Ahire</span>
+                <br>
+                <p>Office Location:</p>
+                <span>Nashik, Maharashtra</span>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Shrihari Travel Solution. All Rights Reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/919371104629?text=Hello%20Shrihari%20Travel%20Solution,%20I%20would%20like%20to%20plan%20a%20trip!" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Toggle mobile menu open/close
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // Close mobile menu when a link is clicked
+        function closeMenu() {
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+            }
+        }
+    </script>
+
+</body>
+</html>
+  
