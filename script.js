@@ -1,31 +1,50 @@
 // --- DARK MODE LOGIC ---
-const darkModeToggle = document.getElementById('dark-mode-toggle');
-const body = document.body;
-const icon = darkModeToggle.querySelector('i');
+const themeToggle = document.getElementById('theme-toggle');
+const themeIcon = themeToggle.querySelector('i');
 
-// Check LocalStorage to see if the user previously enabled dark mode
-if (localStorage.getItem('darkMode') === 'enabled') {
-    body.classList.add('dark-mode');
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
+// Check local storage for saved theme, or use system preference as fallback
+const currentTheme = localStorage.getItem('theme');
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+// Function to apply theme
+function setTheme(isDark) {
+    if (isDark) {
+        document.body.setAttribute('data-theme', 'dark');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun'); // Show sun icon in dark mode
+        localStorage.setItem('theme', 'dark');
+    } else {
+        document.body.removeAttribute('data-theme');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon'); // Show moon icon in light mode
+        localStorage.setItem('theme', 'light');
+    }
 }
 
-// Toggle Dark Mode when the button is clicked
-darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    
-    if (body.classList.contains('dark-mode')) {
-        // Turn Dark Mode ON
-        localStorage.setItem('darkMode', 'enabled');
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-    } else {
-        // Turn Dark Mode OFF
-        localStorage.setItem('darkMode', 'disabled');
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+// Initialize theme on load
+if (currentTheme === 'dark') {
+    setTheme(true);
+} else if (currentTheme === 'light') {
+    setTheme(false);
+} else if (prefersDarkScheme.matches) {
+    // If no saved preference, follow system preference
+    setTheme(true);
+}
+
+// Toggle theme on button click
+themeToggle.addEventListener('click', () => {
+    const isCurrentlyDark = document.body.getAttribute('data-theme') === 'dark';
+    setTheme(!isCurrentlyDark);
+});
+
+// Automatically listen for system theme changes (e.g. phone goes into dark mode at sunset)
+prefersDarkScheme.addEventListener('change', (e) => {
+    // Only auto-switch if the user hasn't manually forced a preference
+    if (!localStorage.getItem('theme')) {
+        setTheme(e.matches);
     }
 });
+
 
 // --- MOBILE MENU LOGIC ---
 function toggleMenu() {
@@ -40,7 +59,7 @@ function closeMenu() {
     }
 }
 
-// --- STICKY HEADER SHRINK EFFECT ---
+// --- STICKY HEADER EFFECT ---
 window.addEventListener('scroll', function() {
     const header = document.getElementById('main-header');
     if (window.scrollY > 50) {
@@ -66,7 +85,7 @@ faqQuestions.forEach(question => {
     });
 });
 
-// --- WHATSAPP FORM SUBMISSION ---
+// --- WHATSAPP FORM SUBMISSION LOGIC ---
 function submitFormToWhatsApp(event) {
     event.preventDefault();
 
@@ -91,4 +110,4 @@ function submitFormToWhatsApp(event) {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
     window.open(whatsappUrl, '_blank');
-        }
+}
