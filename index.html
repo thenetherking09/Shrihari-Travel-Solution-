@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shrihari Travel Solution | Book Tours & Packages</title>
+    <title>Shrihari Travel Solution | Custom Tailored Travel Packages</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -38,9 +38,8 @@
 
             <nav>
                 <ul id="nav-links">
-                    <li><a href="#" onclick="closeMenu()">India Tours</a></li>
-                    <li><a href="#" onclick="closeMenu()">World Tours</a></li>
-                    <li><a href="#specialty" onclick="closeMenu()">Specialty Tours</a></li>
+                    <li><a href="#" onclick="closeMenu()">Destinations</a></li>
+                    <li><a href="#custom-features" onclick="closeMenu()">Customization</a></li>
                     <li><a href="#about" onclick="closeMenu()">About Us</a></li>
                     <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
                 </ul>
@@ -48,77 +47,65 @@
         </div>
     </header>
 
-    <section id="hero-search-section">
+    <section id="hero-section">
         <div class="hero-overlay">
             <div class="hero-content">
-                <h2>Chalo, Duniya Dekhein!</h2>
-                <p>Discover India and the World with Shrihari Travel Solution</p>
-                
-                <div class="search-box-container">
-                    <form class="tour-search-form" onsubmit="event.preventDefault();">
-                        <div class="input-group">
-                            <label>Where to?</label>
-                            <input type="text" placeholder="Enter destination (e.g., Kerala, Dubai)">
-                        </div>
-                        <div class="input-group">
-                            <label>Month of Travel</label>
-                            <select>
-                                <option>Any Month</option>
-                                <option>June 2026</option>
-                                <option>July 2026</option>
-                                <option>August 2026</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="search-btn"><i class="fas fa-search"></i> Search Tours</button>
-                    </form>
-                </div>
+                <h2>Your Dream Journey,<br>Tailor-Made.</h2>
+                <p>We specialize in crafting 100% personalized travel experiences. Tell us your dream destination, and we will design the perfect itinerary just for you.</p>
+                <a href="#contact" class="hero-btn">Start Planning Your Trip</a>
             </div>
         </div>
     </section>
 
-    <section id="specialty" class="tour-themes">
-        <h3>Find Your Perfect Holiday</h3>
-        <div class="theme-grid">
-            <div class="theme-item">
-                <div class="theme-icon"><i class="fas fa-om"></i></div>
-                <p>Spiritual & Pilgrimage</p>
+    <section id="custom-features" class="custom-process">
+        <h3>The Shrihari Custom Experience</h3>
+        <p class="section-subtitle">We don't do 'one-size-fits-all'. Here is how we make your trip uniquely yours:</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-comments feature-icon"></i>
+                <h4>Expert Consultation</h4>
+                <p>We start by understanding your preferences, travel style, and specific needs to draft the perfect base plan.</p>
             </div>
-            <div class="theme-item">
-                <div class="theme-icon"><i class="fas fa-users"></i></div>
-                <p>Family Holidays</p>
+            <div class="feature-card">
+                <i class="fas fa-map-marked-alt feature-icon"></i>
+                <h4>Flexible Itineraries</h4>
+                <p>Want to stay an extra day or skip a monument? You are in control. We adjust the pace exactly to your liking.</p>
             </div>
-            <div class="theme-item">
-                <div class="theme-icon"><i class="fas fa-heart"></i></div>
-                <p>Honeymoon Special</p>
+            <div class="feature-card">
+                <i class="fas fa-bed feature-icon"></i>
+                <h4>Handpicked Stays</h4>
+                <p>From boutique heritage hotels to 5-star luxury resorts, we match the accommodation to your exact taste and budget.</p>
             </div>
-            <div class="theme-item">
-                <div class="theme-icon"><i class="fas fa-suitcase-rolling"></i></div>
-                <p>Customized Trips</p>
+            <div class="feature-card">
+                <i class="fas fa-file-invoice-dollar feature-icon"></i>
+                <h4>Transparent Pricing</h4>
+                <p>No hidden fees. Your package is priced based precisely on the customizations and upgrades you choose.</p>
             </div>
         </div>
     </section>
 
     <section class="trending-tours">
-        <h3>Trending Destinations</h3>
+        <h3>Inspiration For Your Next Trip</h3>
+        <p class="section-subtitle">Explore these popular base itineraries, ready to be customized for you.</p>
         <div class="tour-cards-container">
             <div class="tour-card">
                 <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');">
-                    <span class="badge">Best Seller</span>
+                    <span class="badge">Highly Requested</span>
                 </div>
                 <div class="tour-details">
-                    <div class="tour-duration"><i class="far fa-clock"></i> 5 Days / 4 Nights</div>
+                    <div class="tour-duration"><i class="far fa-clock"></i> Customize your days</div>
                     <h4>Mesmerizing Goa</h4>
                     <ul class="tour-highlights">
-                        <li><i class="fas fa-check"></i> 4 Star Accommodation</li>
-                        <li><i class="fas fa-check"></i> Sightseeing Included</li>
-                        <li><i class="fas fa-check"></i> All Meals</li>
+                        <li><i class="fas fa-check"></i> Choose your hotel tier</li>
+                        <li><i class="fas fa-check"></i> Add private sightseeing</li>
+                        <li><i class="fas fa-check"></i> Flexible meal plans</li>
                     </ul>
                     <div class="tour-price-row">
                         <div class="price">
-                            <span class="starts-at">Starts from</span>
-                            <span class="amount">₹15,999</span>
+                            <span class="starts-at">Pricing</span>
+                            <span class="amount">Custom Quote</span>
                         </div>
-                        <button class="book-btn">View Details</button>
+                        <a href="https://wa.me/919371104629?text=I'd%20like%20to%20customize%20a%20Goa%20trip!" target="_blank" class="book-btn">Inquire Now</a>
                     </div>
                 </div>
             </div>
@@ -126,19 +113,19 @@
             <div class="tour-card">
                 <div class="tour-img" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80');"></div>
                 <div class="tour-details">
-                    <div class="tour-duration"><i class="far fa-clock"></i> 6 Days / 5 Nights</div>
+                    <div class="tour-duration"><i class="far fa-clock"></i> Customize your days</div>
                     <h4>Kerala Backwaters</h4>
                     <ul class="tour-highlights">
-                        <li><i class="fas fa-check"></i> Houseboat Stay</li>
-                        <li><i class="fas fa-check"></i> Munnar Tea Gardens</li>
-                        <li><i class="fas fa-check"></i> Transfers Included</li>
+                        <li><i class="fas fa-check"></i> Private Houseboat Options</li>
+                        <li><i class="fas fa-check"></i> Tailored Munnar excursions</li>
+                        <li><i class="fas fa-check"></i> Dedicated AC transport</li>
                     </ul>
                     <div class="tour-price-row">
                         <div class="price">
-                            <span class="starts-at">Starts from</span>
-                            <span class="amount">₹22,500</span>
+                            <span class="starts-at">Pricing</span>
+                            <span class="amount">Custom Quote</span>
                         </div>
-                        <button class="book-btn">View Details</button>
+                        <a href="https://wa.me/919371104629?text=I'd%20like%20to%20customize%20a%20Kerala%20trip!" target="_blank" class="book-btn">Inquire Now</a>
                     </div>
                 </div>
             </div>
@@ -148,19 +135,19 @@
                     <span class="badge">Pilgrimage</span>
                 </div>
                 <div class="tour-details">
-                    <div class="tour-duration"><i class="far fa-clock"></i> 4 Days / 3 Nights</div>
+                    <div class="tour-duration"><i class="far fa-clock"></i> Customize your days</div>
                     <h4>Divine Varanasi & Ayodhya</h4>
                     <ul class="tour-highlights">
-                        <li><i class="fas fa-check"></i> VIP Darshan</li>
-                        <li><i class="fas fa-check"></i> Ganga Aarti</li>
-                        <li><i class="fas fa-check"></i> AC Transport</li>
+                        <li><i class="fas fa-check"></i> VIP Darshan Assistance</li>
+                        <li><i class="fas fa-check"></i> Private Ganga Aarti boat</li>
+                        <li><i class="fas fa-check"></i> Elderly-friendly logistics</li>
                     </ul>
                     <div class="tour-price-row">
                         <div class="price">
-                            <span class="starts-at">Starts from</span>
-                            <span class="amount">₹12,000</span>
+                            <span class="starts-at">Pricing</span>
+                            <span class="amount">Custom Quote</span>
                         </div>
-                        <button class="book-btn">View Details</button>
+                        <a href="https://wa.me/919371104629?text=I'd%20like%20to%20customize%20a%20Pilgrimage%20trip!" target="_blank" class="book-btn">Inquire Now</a>
                     </div>
                 </div>
             </div>
@@ -170,20 +157,20 @@
     <section id="about" class="why-choose-us">
         <div class="about-grid">
             <div class="about-text">
-                <h3>Why Travel With Shrihari?</h3>
-                <p>Guided by our Owner, <strong>Sujal Lad</strong>, and our Marketing Director, <strong>Gayatri Ahire</strong>, we ensure every journey is seamless, comfortable, and memorable. We handle the logistics so you can focus on making memories.</p>
+                <h3>The Experts Behind Your Journey</h3>
+                <p>Guided by our Owner, <strong>Sujal Lad</strong>, and our Marketing Director, <strong>Gayatri Ahire</strong>, we ensure every journey is seamless, comfortable, and memorable. We handle the complex logistics of custom travel so you can focus entirely on making memories.</p>
                 <div class="stats-grid">
+                    <div class="stat-box">
+                        <h4>100%</h4>
+                        <p>Customizable</p>
+                    </div>
                     <div class="stat-box">
                         <h4>500+</h4>
                         <p>Happy Families</p>
                     </div>
                     <div class="stat-box">
-                        <h4>50+</h4>
-                        <p>Destinations</p>
-                    </div>
-                    <div class="stat-box">
-                        <h4>100%</h4>
-                        <p>Customizable</p>
+                        <h4>24/7</h4>
+                        <p>On-Trip Support</p>
                     </div>
                 </div>
             </div>
@@ -194,19 +181,19 @@
         <div class="footer-container">
             <div class="footer-col">
                 <img src="Logo.png" alt="Logo" class="footer-logo">
-                <p>Your trusted partner for memorable journeys, spiritual tours, and seamless premium travel experiences.</p>
+                <p>Your trusted partner for 100% customized journeys, spiritual tours, and seamless premium travel experiences.</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="#">About Us</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Customization Process</a></li>
                     <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cancellation Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Contact Us</h4>
+                <h4>Contact Us to Plan</h4>
                 <p><i class="fas fa-user-tie"></i> Sujal Lad (Owner)</p>
                 <p><i class="fas fa-bullhorn"></i> Gayatri Ahire (Marketing)</p>
                 <p><i class="fas fa-phone-alt"></i> +91 9371104629</p>
@@ -218,7 +205,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/919371104629?text=Hello%20Shrihari%20Travel%20Solution,%20I%20am%20looking%20for%20a%20tour%20package!" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/919371104629?text=Hello%20Shrihari%20Travel%20Solution,%20I%20would%20like%20to%20plan%20a%20custom%20trip!" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
 
