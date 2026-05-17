@@ -38,7 +38,21 @@ prefersDarkScheme.addEventListener('change', (e) => {
     }
 });
 
-// --- SMART VIBE SELECTION LOGIC ---
+// --- LANGUAGE TOGGLE LOGIC ---
+function toggleLanguage() {
+    const langBtn = document.getElementById('lang-toggle');
+    if (langBtn.innerText === 'EN') {
+        langBtn.innerText = 'MR';
+        // Placeholder: Here you would integrate a translation library (like i18next) 
+        // or toggle visibility of elements with data-lang="mr" and data-lang="en".
+        alert("Marathi language selection activated. (Translation text to be loaded).");
+    } else {
+        langBtn.innerText = 'EN';
+        alert("English language selection activated.");
+    }
+}
+
+// --- SMART VIBE & PACKAGE SELECTION LOGIC ---
 function selectVibe(vibeName) {
     // 1. Scroll down to the quote form smoothly
     document.getElementById('quote-section').scrollIntoView({ behavior: 'smooth' });
@@ -46,20 +60,18 @@ function selectVibe(vibeName) {
     // 2. Find the destination input box
     const destInput = document.getElementById('q-dest');
     
-    // 3. Auto-fill it with the vibe they clicked
-    destInput.value = "I want a " + vibeName + " vibe";
+    // 3. Auto-fill it with the vibe/package they clicked
+    destInput.value = vibeName;
     
-    // 4. Highlight the box briefly so they see it was auto-filled!
+    // 4. Highlight the box briefly so they see it was auto-filled
     destInput.style.transition = "background-color 0.5s ease";
     
-    // Check if we are in dark mode so the highlight color looks right
     if (document.body.getAttribute('data-theme') === 'dark') {
         destInput.style.backgroundColor = "#4a3b22"; // Dark gold highlight
     } else {
         destInput.style.backgroundColor = "#fff3cd"; // Light yellow highlight
     }
     
-    // Reset the highlight color after 1.5 seconds
     setTimeout(() => {
         destInput.style.backgroundColor = "var(--input-bg)";
     }, 1500);
@@ -88,39 +100,25 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// --- FAQ ACCORDION LOGIC ---
-const faqQuestions = document.querySelectorAll('.faq-question');
-
-faqQuestions.forEach(question => {
-    question.addEventListener('click', () => {
-        question.classList.toggle('active');
-        const answer = question.nextElementSibling;
-        
-        if (question.classList.contains('active')) {
-            answer.style.maxHeight = answer.scrollHeight + "px";
-        } else {
-            answer.style.maxHeight = null;
-        }
-    });
-});
-
-// --- WHATSAPP FORM SUBMISSION LOGIC ---
+// --- WHATSAPP FORM SUBMISSION LOGIC (UPDATED WITH BUDGET) ---
 function submitFormToWhatsApp(event) {
     event.preventDefault();
 
     const name = document.getElementById('q-name').value;
     const dest = document.getElementById('q-dest').value;
-    const dates = document.getElementById('q-dates').value;
+    const dateStart = document.getElementById('q-dates').value; // Now grabs from Date Picker
     const style = document.getElementById('q-style').value;
     const adults = document.getElementById('q-adults').value;
     const kids = document.getElementById('q-kids').value;
+    const budget = document.getElementById('q-budget').value; // New Budget Field
 
     const message = `Hello Shrihari Travel Solution!%0A%0A` + 
                     `I would like to request a custom travel quote. Here are my details:%0A%0A` +
                     `*Name:* ${name}%0A` +
                     `*Destination:* ${dest}%0A` +
-                    `*Travel Dates:* ${dates}%0A` +
+                    `*Expected Start Date:* ${dateStart}%0A` +
                     `*Travel Style:* ${style}%0A` +
+                    `*Budget Per Person:* ${budget}%0A` +
                     `*Number of Adults:* ${adults}%0A` +
                     `*Number of Children:* ${kids}%0A%0A` +
                     `Please let me know the next steps to start planning. Thank you!`;
