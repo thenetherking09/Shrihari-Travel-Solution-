@@ -33,10 +33,8 @@
             </div>
             
             <div class="header-actions">
-                <button id="lang-toggle" class="lang-btn" aria-label="Toggle Language" onclick="toggleLanguage()">
-                    EN
-                </button>
-
+                <button class="lang-btn" title="Switch Language">EN / MR</button>
+                
                 <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -49,9 +47,9 @@
             <nav>
                 <ul id="nav-links">
                     <li><a href="#destinations" onclick="closeMenu()">Destinations</a></li>
+                    <li><a href="#trending" onclick="closeMenu()">Packages</a></li>
                     <li><a href="#services" onclick="closeMenu()">Services</a></li>
                     <li><a href="#quote-section" onclick="closeMenu()">Request Quote</a></li>
-                    <li><a href="#about" onclick="closeMenu()">About Us</a></li>
                 </ul>
             </nav>
         </div>
@@ -60,9 +58,7 @@
     <section id="hero-section">
         <video autoplay muted loop playsinline class="hero-video">
             <source src="https://cdn.pixabay.com/video/2020/05/25/40141-425121404_large.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
         </video>
-        
         <div class="hero-overlay">
             <div class="hero-content">
                 <h2>Your Dream Journey,<br>Tailor-Made.</h2>
@@ -72,119 +68,81 @@
         </div>
     </section>
 
-    <section id="services" class="services-section">
-        <h3>Our Comprehensive Services</h3>
-        <p class="section-subtitle">Everything you need for a seamless journey, handled by experts.</p>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-plane-departure service-icon"></i>
-                <h4>Flight & Train Bookings</h4>
-                <p>End-to-end ticketing solutions for domestic and international travel.</p>
+    <section id="destinations" class="destinations-section">
+        <h3>Top Destinations We Excel In</h3>
+        <p class="section-subtitle">Discover the breathtaking locations we specialize in crafting journeys for.</p>
+        <div class="dest-grid">
+            <div class="dest-card" style="background-image: url('https://images.unsplash.com/photo-1598091383021-15ddea10925d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                <div class="dest-overlay"><h4>Kashmir</h4></div>
             </div>
-            <div class="service-card">
-                <i class="fas fa-passport service-icon"></i>
-                <h4>Visa Assistance</h4>
-                <p>Hassle-free visa processing and documentation guidance.</p>
+            <div class="dest-card" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                <div class="dest-overlay"><h4>Kerala</h4></div>
             </div>
-            <div class="service-card">
-                <i class="fas fa-shield-alt service-icon"></i>
-                <h4>Travel Insurance</h4>
-                <p>Comprehensive coverage to ensure you travel with peace of mind.</p>
+            <div class="dest-card" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                <div class="dest-overlay"><h4>Dubai</h4></div>
             </div>
-            <div class="service-card">
-                <i class="fas fa-users service-icon"></i>
-                <h4>Corporate Group Tours</h4>
-                <p>Specialized itineraries for corporate retreats and MICE events.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-heart service-icon"></i>
-                <h4>Honeymoon Packages</h4>
-                <p>Romantic getaways curated with luxury, privacy, and special surprises.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-om service-icon"></i>
-                <h4>Spiritual Tours</h4>
-                <p>Dedicated Chardham Yatra, Jyotirlinga, and custom pilgrimage tours.</p>
+            <div class="dest-card" style="background-image: url('https://images.unsplash.com/photo-1528181304800-259b08848526?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                <div class="dest-overlay"><h4>Thailand</h4></div>
             </div>
         </div>
     </section>
 
-    <section id="destinations" class="destinations-container">
-        <h3>Trending Destinations & Sample Itineraries</h3>
-        <p class="section-subtitle">Need inspiration? Explore our most popular geographic locations and baseline packages. Every trip can be 100% customized.</p>
-        
-        <div class="dest-grid">
-            <div class="dest-card">
-                <div class="dest-image" style="background-image: url('https://images.unsplash.com/photo-1595815771614-ade9d652a65d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="dest-content">
-                    <span class="dest-tag">Trending Winter</span>
-                    <h4>Mesmerizing Kashmir</h4>
-                    <p class="dest-duration">6 Nights / 7 Days</p>
-                    <ul class="dest-highlights">
+    <section id="trending" class="trending-section">
+        <h3>Trending Inspiration</h3>
+        <p class="section-subtitle">Sample base itineraries. Every trip is 100% customizable to your needs!</p>
+        <div class="trending-grid">
+            <div class="trending-card">
+                <img src="https://images.unsplash.com/photo-1598091383021-15ddea10925d?ixlib=rb-4.0.3&w=600&q=80" alt="Kashmir">
+                <div class="trending-info">
+                    <h4>Mesmerizing Kashmir (6N/7D)</h4>
+                    <p class="price">Starts from ₹24,999 pp</p>
+                    <ul class="itinerary-brief">
                         <li><i class="fas fa-check"></i> Srinagar Houseboat Stay</li>
                         <li><i class="fas fa-check"></i> Gulmarg Gondola Ride</li>
-                        <li><i class="fas fa-check"></i> Pahalgam Sightseeing</li>
+                        <li><i class="fas fa-check"></i> Pahalgam Valleys</li>
                     </ul>
-                    <div class="dest-footer">
-                        <span class="dest-price">Starts from ₹24,999 pp</span>
-                        <button onclick="selectVibe('Kashmir Package')" class="dest-btn">Customize This</button>
-                    </div>
+                    <button class="btn-outline" onclick="selectVibe('Mesmerizing Kashmir 6N/7D')">Customize This</button>
                 </div>
             </div>
-
-            <div class="dest-card">
-                <div class="dest-image" style="background-image: url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="dest-content">
-                    <span class="dest-tag">Luxury Escape</span>
-                    <h4>Romantic Maldives</h4>
-                    <p class="dest-duration">4 Nights / 5 Days</p>
-                    <ul class="dest-highlights">
-                        <li><i class="fas fa-check"></i> Water Villa Stay</li>
+            <div class="trending-card">
+                <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&w=600&q=80" alt="Maldives">
+                <div class="trending-info">
+                    <h4>Romantic Maldives (4N/5D)</h4>
+                    <p class="price">Starts from ₹65,000 pp</p>
+                    <ul class="itinerary-brief">
+                        <li><i class="fas fa-check"></i> Water Villa with Pool</li>
                         <li><i class="fas fa-check"></i> All-Inclusive Meals</li>
-                        <li><i class="fas fa-check"></i> Speedboat Airport Transfers</li>
+                        <li><i class="fas fa-check"></i> Sunset Cruise</li>
                     </ul>
-                    <div class="dest-footer">
-                        <span class="dest-price">Starts from ₹55,000 pp</span>
-                        <button onclick="selectVibe('Maldives Luxury')" class="dest-btn">Customize This</button>
-                    </div>
+                    <button class="btn-outline" onclick="selectVibe('Romantic Maldives 4N/5D')">Customize This</button>
                 </div>
             </div>
+            <div class="trending-card">
+                <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&w=600&q=80" alt="Chardham">
+                <div class="trending-info">
+                    <h4>Spiritual Chardham Yatra</h4>
+                    <p class="price">Starts from ₹32,000 pp</p>
+                    <ul class="itinerary-brief">
+                        <li><i class="fas fa-check"></i> VIP Darshan Assistance</li>
+                        <li><i class="fas fa-check"></i> Comfortable Transport</li>
+                        <li><i class="fas fa-check"></i> Premium Stays</li>
+                    </ul>
+                    <button class="btn-outline" onclick="selectVibe('Chardham Yatra')">Customize This</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="dest-card">
-                <div class="dest-image" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="dest-content">
-                    <span class="dest-tag">Backwaters & Nature</span>
-                    <h4>Tranquil Kerala</h4>
-                    <p class="dest-duration">5 Nights / 6 Days</p>
-                    <ul class="dest-highlights">
-                        <li><i class="fas fa-check"></i> Munnar Tea Gardens</li>
-                        <li><i class="fas fa-check"></i> Alleppey Houseboat</li>
-                        <li><i class="fas fa-check"></i> Thekkady Spice Plantation</li>
-                    </ul>
-                    <div class="dest-footer">
-                        <span class="dest-price">Starts from ₹18,500 pp</span>
-                        <button onclick="selectVibe('Kerala Backwaters')" class="dest-btn">Customize This</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="dest-card">
-                <div class="dest-image" style="background-image: url('https://images.unsplash.com/photo-1512453979436-5a50ce8c8d05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
-                <div class="dest-content">
-                    <span class="dest-tag">Global City</span>
-                    <h4>Dazzling Dubai</h4>
-                    <p class="dest-duration">4 Nights / 5 Days</p>
-                    <ul class="dest-highlights">
-                        <li><i class="fas fa-check"></i> Burj Khalifa Top Floor</li>
-                        <li><i class="fas fa-check"></i> Desert Safari & BBQ</li>
-                        <li><i class="fas fa-check"></i> Dhow Cruise Dinner</li>
-                    </ul>
-                    <div class="dest-footer">
-                        <span class="dest-price">Starts from ₹35,000 pp</span>
-                        <button onclick="selectVibe('Dubai City Tour')" class="dest-btn">Customize This</button>
-                    </div>
-                </div>
-            </div>
+    <section id="services" class="services-section">
+        <h3>Our Comprehensive Services</h3>
+        <p class="section-subtitle">We handle the complex logistics so you can focus on making memories.</p>
+        <div class="services-grid">
+            <div class="service-box"><i class="fas fa-plane-departure"></i><h5>Flight & Train Bookings</h5></div>
+            <div class="service-box"><i class="fas fa-passport"></i><h5>Visa Assistance</h5></div>
+            <div class="service-box"><i class="fas fa-shield-alt"></i><h5>Travel Insurance</h5></div>
+            <div class="service-box"><i class="fas fa-users"></i><h5>Corporate Group Tours</h5></div>
+            <div class="service-box"><i class="fas fa-heart"></i><h5>Honeymoon Packages</h5></div>
+            <div class="service-box"><i class="fas fa-om"></i><h5>Spiritual & Pilgrimage Tours</h5></div>
         </div>
     </section>
 
@@ -207,15 +165,17 @@
                 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Expected Travel Date (Start)</label>
-                        <input type="date" id="q-dates" required> </div>
+                        <label>Start Date</label>
+                        <input type="date" id="q-dates" required>
+                    </div>
                     <div class="form-group">
-                        <label>Travel Style</label>
-                        <select id="q-style" required>
-                            <option value="" disabled selected>Select an option</option>
-                            <option value="Standard / Budget">Standard / Budget</option>
-                            <option value="Premium / 4-Star">Premium / 4-Star</option>
-                            <option value="Luxury / 5-Star">Luxury / 5-Star</option>
+                        <label>Approx. Budget (Per Person)</label>
+                        <select id="q-budget" required>
+                            <option value="" disabled selected>Select Budget</option>
+                            <option value="Under ₹15,000">Under ₹15,000</option>
+                            <option value="₹15,000 - ₹30,000">₹15,000 - ₹30,000</option>
+                            <option value="₹30,000 - ₹60,000">₹30,000 - ₹60,000</option>
+                            <option value="₹60,000+ (Luxury)">₹60,000+ (Luxury)</option>
                         </select>
                     </div>
                 </div>
@@ -229,16 +189,6 @@
                         <label>Number of Children</label>
                         <input type="number" id="q-kids" min="0" placeholder="0" required>
                     </div>
-                    <div class="form-group">
-                        <label>Approx Budget (Per Person)</label>
-                        <select id="q-budget" required>
-                            <option value="" disabled selected>Select Budget</option>
-                            <option value="Under ₹15,000">Under ₹15,000</option>
-                            <option value="₹15,000 - ₹30,000">₹15,000 - ₹30,000</option>
-                            <option value="₹30,000 - ₹50,000">₹30,000 - ₹50,000</option>
-                            <option value="₹50,000+">₹50,000+</option>
-                        </select>
-                    </div>
                 </div>
 
                 <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> Send Details via WhatsApp</button>
@@ -247,42 +197,32 @@
     </section>
 
     <section class="newsletter-section">
-        <div class="newsletter-container">
-            <h3>Join Our Travel Community</h3>
-            <p>Subscribe to get exclusive travel deals, destination guides, and early access to holiday packages.</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+        <div class="newsletter-content">
+            <h3>Get Exclusive Travel Deals</h3>
+            <p>Subscribe for early access to holiday packages and hidden gems.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Subscribed successfully!');">
                 <input type="email" placeholder="Enter your email address" required>
                 <button type="submit">Subscribe</button>
             </form>
         </div>
     </section>
 
-    <footer id="about">
+    <footer>
         <div class="footer-container">
             <div class="footer-col">
                 <img src="Logo.png" alt="Logo" class="footer-logo">
                 <p>Your trusted partner for 100% customized journeys, spiritual tours, and seamless premium travel experiences.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Our Services</a></li>
-                    <li><a href="#destinations">Destinations</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
             </div>
             <div class="footer-col">
                 <h4>Contact Us</h4>
                 <p><i class="fas fa-user-tie"></i> Sujal Lad (Owner)</p>
                 <p><i class="fas fa-phone-alt"></i> +91 9371104629</p>
                 <p><i class="fas fa-map-marker-alt"></i> Nashik, Maharashtra</p>
+            </div>
+            <div class="footer-col">
+                <h4>Find Us</h4>
                 <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119981.38711417237!2d73.72107775798991!3d19.991105342981792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb730310ff6f%3A0xe5e73998b50f757f!2sNashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1716301234567!5m2!1sen!2sin" width="100%" height="150" style="border:0; border-radius:8px; margin-top:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119981.3854657152!2d73.72107775!3d20.00762635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdcba1714441585%3A0xe5a3c0a4eeb756f7!2sNashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="150" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
