@@ -33,6 +33,10 @@
             </div>
             
             <div class="header-actions">
+                <button id="lang-toggle" class="lang-btn" aria-label="Toggle Language" onclick="toggleLanguage()">
+                    EN
+                </button>
+
                 <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
                     <i class="fas fa-moon"></i>
                 </button>
@@ -44,9 +48,9 @@
 
             <nav>
                 <ul id="nav-links">
-                    <li><a href="#vibe-section" onclick="closeMenu()">Travel Vibes</a></li>
+                    <li><a href="#destinations" onclick="closeMenu()">Destinations</a></li>
+                    <li><a href="#services" onclick="closeMenu()">Services</a></li>
                     <li><a href="#quote-section" onclick="closeMenu()">Request Quote</a></li>
-                    <li><a href="#faq-section" onclick="closeMenu()">FAQs</a></li>
                     <li><a href="#about" onclick="closeMenu()">About Us</a></li>
                 </ul>
             </nav>
@@ -68,57 +72,118 @@
         </div>
     </section>
 
-    <section id="vibe-section" class="vibe-container">
-        <h3>What is your travel vibe?</h3>
-        <p class="section-subtitle">Click a vibe below to start building your custom itinerary.</p>
-        
-        <div class="vibe-grid">
-            <div class="vibe-card" onclick="selectVibe('Peaceful Mountains')" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                <div class="vibe-overlay">
-                    <h4>Peaceful Mountains</h4>
-                </div>
+    <section id="services" class="services-section">
+        <h3>Our Comprehensive Services</h3>
+        <p class="section-subtitle">Everything you need for a seamless journey, handled by experts.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-plane-departure service-icon"></i>
+                <h4>Flight & Train Bookings</h4>
+                <p>End-to-end ticketing solutions for domestic and international travel.</p>
             </div>
-            <div class="vibe-card" onclick="selectVibe('Sunny Beaches')" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                <div class="vibe-overlay">
-                    <h4>Sunny Beaches</h4>
-                </div>
+            <div class="service-card">
+                <i class="fas fa-passport service-icon"></i>
+                <h4>Visa Assistance</h4>
+                <p>Hassle-free visa processing and documentation guidance.</p>
             </div>
-            <div class="vibe-card" onclick="selectVibe('Spiritual Journey')" style="background-image: url('https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                <div class="vibe-overlay">
-                    <h4>Spiritual Journeys</h4>
-                </div>
+            <div class="service-card">
+                <i class="fas fa-shield-alt service-icon"></i>
+                <h4>Travel Insurance</h4>
+                <p>Comprehensive coverage to ensure you travel with peace of mind.</p>
             </div>
-            <div class="vibe-card" onclick="selectVibe('Historical Exploration')" style="background-image: url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
-                <div class="vibe-overlay">
-                    <h4>Historical Explorations</h4>
-                </div>
+            <div class="service-card">
+                <i class="fas fa-users service-icon"></i>
+                <h4>Corporate Group Tours</h4>
+                <p>Specialized itineraries for corporate retreats and MICE events.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-heart service-icon"></i>
+                <h4>Honeymoon Packages</h4>
+                <p>Romantic getaways curated with luxury, privacy, and special surprises.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-om service-icon"></i>
+                <h4>Spiritual Tours</h4>
+                <p>Dedicated Chardham Yatra, Jyotirlinga, and custom pilgrimage tours.</p>
             </div>
         </div>
     </section>
 
-    <section id="custom-features" class="custom-process">
-        <h3>The Shrihari Custom Experience</h3>
-        <p class="section-subtitle">We don't do 'one-size-fits-all'. Here is how we make your trip uniquely yours:</p>
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="fas fa-comments feature-icon"></i>
-                <h4>Expert Consultation</h4>
-                <p>We start by understanding your preferences, travel style, and specific needs to draft the perfect base plan.</p>
+    <section id="destinations" class="destinations-container">
+        <h3>Trending Destinations & Sample Itineraries</h3>
+        <p class="section-subtitle">Need inspiration? Explore our most popular geographic locations and baseline packages. Every trip can be 100% customized.</p>
+        
+        <div class="dest-grid">
+            <div class="dest-card">
+                <div class="dest-image" style="background-image: url('https://images.unsplash.com/photo-1595815771614-ade9d652a65d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="dest-content">
+                    <span class="dest-tag">Trending Winter</span>
+                    <h4>Mesmerizing Kashmir</h4>
+                    <p class="dest-duration">6 Nights / 7 Days</p>
+                    <ul class="dest-highlights">
+                        <li><i class="fas fa-check"></i> Srinagar Houseboat Stay</li>
+                        <li><i class="fas fa-check"></i> Gulmarg Gondola Ride</li>
+                        <li><i class="fas fa-check"></i> Pahalgam Sightseeing</li>
+                    </ul>
+                    <div class="dest-footer">
+                        <span class="dest-price">Starts from ₹24,999 pp</span>
+                        <button onclick="selectVibe('Kashmir Package')" class="dest-btn">Customize This</button>
+                    </div>
+                </div>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-map-marked-alt feature-icon"></i>
-                <h4>Flexible Itineraries</h4>
-                <p>Want to stay an extra day or skip a monument? You are in control. We adjust the pace exactly to your liking.</p>
+
+            <div class="dest-card">
+                <div class="dest-image" style="background-image: url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="dest-content">
+                    <span class="dest-tag">Luxury Escape</span>
+                    <h4>Romantic Maldives</h4>
+                    <p class="dest-duration">4 Nights / 5 Days</p>
+                    <ul class="dest-highlights">
+                        <li><i class="fas fa-check"></i> Water Villa Stay</li>
+                        <li><i class="fas fa-check"></i> All-Inclusive Meals</li>
+                        <li><i class="fas fa-check"></i> Speedboat Airport Transfers</li>
+                    </ul>
+                    <div class="dest-footer">
+                        <span class="dest-price">Starts from ₹55,000 pp</span>
+                        <button onclick="selectVibe('Maldives Luxury')" class="dest-btn">Customize This</button>
+                    </div>
+                </div>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-bed feature-icon"></i>
-                <h4>Handpicked Stays</h4>
-                <p>From boutique heritage hotels to 5-star luxury resorts, we match the accommodation to your exact taste and budget.</p>
+
+            <div class="dest-card">
+                <div class="dest-image" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="dest-content">
+                    <span class="dest-tag">Backwaters & Nature</span>
+                    <h4>Tranquil Kerala</h4>
+                    <p class="dest-duration">5 Nights / 6 Days</p>
+                    <ul class="dest-highlights">
+                        <li><i class="fas fa-check"></i> Munnar Tea Gardens</li>
+                        <li><i class="fas fa-check"></i> Alleppey Houseboat</li>
+                        <li><i class="fas fa-check"></i> Thekkady Spice Plantation</li>
+                    </ul>
+                    <div class="dest-footer">
+                        <span class="dest-price">Starts from ₹18,500 pp</span>
+                        <button onclick="selectVibe('Kerala Backwaters')" class="dest-btn">Customize This</button>
+                    </div>
+                </div>
             </div>
-            <div class="feature-card">
-                <i class="fas fa-file-invoice-dollar feature-icon"></i>
-                <h4>Transparent Pricing</h4>
-                <p>No hidden fees. Your package is priced based precisely on the customizations and upgrades you choose.</p>
+            
+            <div class="dest-card">
+                <div class="dest-image" style="background-image: url('https://images.unsplash.com/photo-1512453979436-5a50ce8c8d05?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="dest-content">
+                    <span class="dest-tag">Global City</span>
+                    <h4>Dazzling Dubai</h4>
+                    <p class="dest-duration">4 Nights / 5 Days</p>
+                    <ul class="dest-highlights">
+                        <li><i class="fas fa-check"></i> Burj Khalifa Top Floor</li>
+                        <li><i class="fas fa-check"></i> Desert Safari & BBQ</li>
+                        <li><i class="fas fa-check"></i> Dhow Cruise Dinner</li>
+                    </ul>
+                    <div class="dest-footer">
+                        <span class="dest-price">Starts from ₹35,000 pp</span>
+                        <button onclick="selectVibe('Dubai City Tour')" class="dest-btn">Customize This</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -142,9 +207,8 @@
                 
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Expected Travel Dates</label>
-                        <input type="text" id="q-dates" placeholder="E.g. Mid-October for 6 Days" required>
-                    </div>
+                        <label>Expected Travel Date (Start)</label>
+                        <input type="date" id="q-dates" required> </div>
                     <div class="form-group">
                         <label>Travel Style</label>
                         <select id="q-style" required>
@@ -165,6 +229,16 @@
                         <label>Number of Children</label>
                         <input type="number" id="q-kids" min="0" placeholder="0" required>
                     </div>
+                    <div class="form-group">
+                        <label>Approx Budget (Per Person)</label>
+                        <select id="q-budget" required>
+                            <option value="" disabled selected>Select Budget</option>
+                            <option value="Under ₹15,000">Under ₹15,000</option>
+                            <option value="₹15,000 - ₹30,000">₹15,000 - ₹30,000</option>
+                            <option value="₹30,000 - ₹50,000">₹30,000 - ₹50,000</option>
+                            <option value="₹50,000+">₹50,000+</option>
+                        </select>
+                    </div>
                 </div>
 
                 <button type="submit" class="submit-btn"><i class="fab fa-whatsapp"></i> Send Details via WhatsApp</button>
@@ -172,64 +246,34 @@
         </div>
     </section>
 
-    <section id="faq-section" class="faq-container">
-        <h3>Frequently Asked Questions</h3>
-        <p class="section-subtitle">Common questions about our custom travel services.</p>
-        
-        <div class="faq-list">
-            <div class="faq-item">
-                <button class="faq-question">Do you book flights as well? <i class="fas fa-chevron-down"></i></button>
-                <div class="faq-answer">
-                    <p>Yes, we provide end-to-end solutions. We can book your domestic and international flights, arrange airport transfers, and manage all local transport so you have a completely hassle-free experience.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">How much advance notice do you need to plan a trip? <i class="fas fa-chevron-down"></i></button>
-                <div class="faq-answer">
-                    <p>For domestic trips, we recommend contacting us at least 3-4 weeks in advance. For international holidays, reaching out 2-3 months prior ensures we get the best rates for premium hotels and flights.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Can we change the itinerary during the trip? <i class="fas fa-chevron-down"></i></button>
-                <div class="faq-answer">
-                    <p>While major changes (like hotel or flight cancellations) during the trip may incur charges from the vendors, we offer high flexibility with daily sightseeing. You can always decide to skip a monument to relax or request an extra stop along your route.</p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question">Are there hidden charges in custom packages? <i class="fas fa-chevron-down"></i></button>
-                <div class="faq-answer">
-                    <p>Absolutely not. At Shrihari Travel Solution, transparency is our core value. The quote we provide will explicitly state exactly what is included (meals, transport, entry fees) and what is excluded.</p>
-                </div>
-            </div>
+    <section class="newsletter-section">
+        <div class="newsletter-container">
+            <h3>Join Our Travel Community</h3>
+            <p>Subscribe to get exclusive travel deals, destination guides, and early access to holiday packages.</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing!');">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
     </section>
 
-    <section id="about" class="why-choose-us">
-        <div class="about-grid">
-            <div class="about-text">
-                <h3>The Experts Behind Your Journey</h3>
-                <p>Guided by our Owner, <strong>Sujal Lad</strong>, and our Team In Each Region we ensure every journey is seamless, comfortable, and memorable. We handle the complex logistics of custom travel so you can focus entirely on making memories.</p>
-                <div class="stats-grid">
-                    <div class="stat-box"><h4>100%</h4><p>Customizable</p></div>
-                    <div class="stat-box"><h4>500+</h4><p>Happy Families</p></div>
-                    <div class="stat-box"><h4>24/7</h4><p>On-Trip Support</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
+    <footer id="about">
         <div class="footer-container">
             <div class="footer-col">
                 <img src="Logo.png" alt="Logo" class="footer-logo">
                 <p>Your trusted partner for 100% customized journeys, spiritual tours, and seamless premium travel experiences.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#">About Us</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
                     <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -237,6 +281,9 @@
                 <p><i class="fas fa-user-tie"></i> Sujal Lad (Owner)</p>
                 <p><i class="fas fa-phone-alt"></i> +91 9371104629</p>
                 <p><i class="fas fa-map-marker-alt"></i> Nashik, Maharashtra</p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119981.38711417237!2d73.72107775798991!3d19.991105342981792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb730310ff6f%3A0xe5e73998b50f757f!2sNashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1716301234567!5m2!1sen!2sin" width="100%" height="150" style="border:0; border-radius:8px; margin-top:10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
@@ -244,11 +291,17 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/919371104629?text=Hello%20Shrihari%20Travel%20Solution,%20I%20would%20like%20to%20plan%20a%20custom%20trip!" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
-        <i class="fab fa-whatsapp"></i>
+    <a href="tel:+919371104629" class="mobile-call-btn">
+        <i class="fas fa-phone-alt"></i> Call Now
     </a>
+
+    <div class="whatsapp-wrapper">
+        <div class="whatsapp-tooltip">Hi there! Looking for a custom trip? Chat with Sujal directly!</div>
+        <a href="https://wa.me/919371104629?text=Hello%20Shrihari%20Travel%20Solution,%20I%20would%20like%20to%20plan%20a%20custom%20trip!" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
     <script src="script.js"></script>
 </body>
-    </html>
-    
+</html>
